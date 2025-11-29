@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth-service';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-main-tournament-page',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './main-tournament-page.html',
   styleUrl: './main-tournament-page.scss',
 })
