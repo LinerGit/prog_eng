@@ -1,0 +1,29 @@
+<body>
+    <header>
+        <img src="GameIcon.svg" alt="">
+        
+        <h1>Tournaments</h1><br>
+        <button class="Registation-login">Registrate/Login</button>
+       
+        
+    </header>
+    <div class="main-content">
+        <section class="nav-side">
+            <div class="main-page">
+                <img src="avatar_placeholder.svg" alt=""><h2>Tournaments List</h2>
+            </div>
+            @for (tournament of tournamentIds; track $index) {
+                <div class="tournament-card">
+                    <span>{{$index}} tournament</span>
+                </div>
+            }
+        </section>
+        <section class="table-side">
+            
+        </section>
+    </div>
+    <footer>
+        <button (click)="logout()">Logout</button>
+    </footer>
+    
+</body>
