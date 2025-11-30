@@ -18,7 +18,8 @@ namespace WebApplicationAM.Infrastructure.DTO
         public DbSet<Organisator> Organisators => Set<Organisator>();
         public DbSet<Team> Teams => Set<Team>();  
         public DbSet<Tournament> Tournaments => Set<Tournament>();   
-        
+        public DbSet<Match> Matches => Set<Match>();
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -56,7 +57,10 @@ namespace WebApplicationAM.Infrastructure.DTO
                 entity.Property(e => e.Name).IsRequired();
                 entity.Property(e => e.Date).IsRequired();
                 entity.Property(e => e.MaxTeams).IsRequired();
+                entity.Property(e => e.MinTeams).IsRequired();
+                entity.Property(e => e.Matches).IsRequired();
             });
+
 
         }
     }

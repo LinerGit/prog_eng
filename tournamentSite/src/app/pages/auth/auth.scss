@@ -16,6 +16,7 @@ body {
     padding: 40px 30px;
     width: 100%;
     max-width: 380px;
+    margin-left: 40%
 }
 input {
   padding: 10px 14px;
@@ -40,6 +41,24 @@ input:focus {
 }
 
 .forgot{
+    font-size: 1rem;
+    color:var(--grey-color);
+}
+
+.register-form {
+    font-size: 1.8rem;
+    border-radius: 16px;
+    border-radius: 16px;
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 380px;
+    margin-left: 40%;
+} 
+.login {
+    font-size: 1rem;
+    color:var(--grey-color);
+}
+.register {
     font-size: 1rem;
     color:var(--grey-color);
 }

@@ -5,23 +5,22 @@
     <p class="help"></p>
 </header>
 <main>
-    <div class="content">
         @if (mode === 'login') {
             <div class="login-card">
             
                 <h2>Login</h2>
                 Login <input [(ngModel)]="loginData.login" type="text"><br>
-                Password <input [(ngModel)]="loginData.password"type="password">
+                Password <input [(ngModel)]="loginData.password"type="password"><br>
                 <button type="button" (click)="onLogin()">
                         Login
                 </button>
-            
-                <span class="forgot" (click)="onForgotPassword()">Forgot password?</span>
+                <br>
+                <span class="forgot" (click)="onForgotPassword()">Forgot password?</span><br>
                 <span class="register" (click)="onRegister()"> Dont have any account?Register</span>
             </div>
         } @else if (mode === 'forgot') {
             <div class="login-card">
-                <h2>Reset Password</h2>
+                <h2>Reset Password</h2><br>
                 <label for="resetEmail">Email </label>
                 <input
                 id="resetEmail"
@@ -40,11 +39,13 @@
             </div>
             
         } @else if(mode === 'register'){
-            Login <input [(ngModel)]="registerData.login" type="text"><br>
-            Email <input [(ngModel)]="registerData.email" type="email" name="" id="">
-            Password <input [(ngModel)]="registerData.password"type="password">
-            <span class="login" (click)="onBackToLogin()">Have an account?Login</span>
+            <div class="register-form">
+                Login <input [(ngModel)]="registerData.login" type="text"><br>
+                Email <input [(ngModel)]="registerData.email" type="email" name="" id=""><br>
+                Password <input [(ngModel)]="registerData.password"type="password"><br>
+                <span class="login" (click)="onBackToLogin()">Have an account?Login</span>
+            </div>
+            
         }
         
-    </div>
 </main>

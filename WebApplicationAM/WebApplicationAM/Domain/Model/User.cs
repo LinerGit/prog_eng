@@ -7,7 +7,7 @@
         public required string PasswordHash { get; set; }
         public required string Email { get; set; }
         public required bool IsCaptain { get; set; }
-        public Team Team { get; set; }
+        public Team? Team { get; set; }
 
     }
 }
