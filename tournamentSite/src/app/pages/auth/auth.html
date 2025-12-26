@@ -1,0 +1,51 @@
+<header class="content">
+    <img src="GameIcon.svg" alt="">
+    <h1>Tournaments</h1>
+    
+    <p class="help"></p>
+</header>
+<main>
+        @if (mode === 'login') {
+            <div class="login-card">
+            
+                <h2>Login</h2>
+                Login <input [(ngModel)]="loginData.login" type="text"><br>
+                Password <input [(ngModel)]="loginData.password"type="password"><br>
+                <button type="button" (click)="onLogin()">
+                        Login
+                </button>
+                <br>
+                <span class="forgot" (click)="onForgotPassword()">Forgot password?</span><br>
+                <span class="register" (click)="onRegister()"> Dont have any account?Register</span>
+            </div>
+        } @else if (mode === 'forgot') {
+            <div class="login-card">
+                <h2>Reset Password</h2><br>
+                <label for="resetEmail">Email </label>
+                <input
+                id="resetEmail"
+                name="resetEmail"
+                type="email"
+                required
+                >
+                <form action="">
+                    <button type="submit">
+                        Send
+                    </button>
+                </form>
+                <a class="forgot" (click)="onBackToLogin()" style="display: block; margin-top: 10px; cursor: pointer;">
+                   Back to login
+                </a>
+            </div>
+            
+        } @else if(mode === 'register'){
+            <div class="register-form">
+                Login <input [(ngModel)]="registerData.login" type="text"><br>
+                Email <input [(ngModel)]="registerData.email" type="email" name="" id=""><br>
+                Password <input [(ngModel)]="registerData.password"type="password"><br>
+                <span class="login" (click)="onBackToLogin()">Have an account?Login</span>
+            </div>
+            
+        }
+        
+</main>
