@@ -53,7 +53,6 @@ namespace Backend.Infrastructure.Persistence.Repositories
         public async Task<Match?> GetMatchWithPlayersAsync(int matchId, CancellationToken ct)
         {
             return await _context.Matches
-                .AsNoTracking()
                 .Include(m => m.TeamA).ThenInclude(t => t.Players)
                 .Include(m => m.TeamB).ThenInclude(t => t.Players)
                 .FirstOrDefaultAsync(m => m.Id == matchId, ct);
