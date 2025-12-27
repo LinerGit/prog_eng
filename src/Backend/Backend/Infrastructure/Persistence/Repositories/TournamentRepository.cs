@@ -53,6 +53,7 @@ namespace Backend.Infrastructure.Persistence.Repositories
         public async Task<Match?> GetMatchWithPlayersAsync(int matchId, CancellationToken ct)
         {
             return await _context.Matches
+                .AsNoTracking()
                 .Include(m => m.TeamA).ThenInclude(t => t.Players)
                 .Include(m => m.TeamB).ThenInclude(t => t.Players)
                 .FirstOrDefaultAsync(m => m.Id == matchId, ct);
@@ -60,6 +61,7 @@ namespace Backend.Infrastructure.Persistence.Repositories
         public async Task<List<Team>> GetTeamsWithPlayersAsync(int teamAId, int teamBId, CancellationToken ct)
         {
             return await _context.Teams
+                .AsNoTracking()
                 .Include(t => t.Players)
                 .Where(t => t.Id == teamAId || t.Id == teamBId)
                 .ToListAsync(ct);
@@ -67,12 +69,14 @@ namespace Backend.Infrastructure.Persistence.Repositories
         public async Task<Tournament?> GetTournamentViewAsync(int id, CancellationToken ct)
         {
             return await _context.Tournaments
+                .AsNoTracking()
                 .Include(t => t.Teams)
                 .Include(t => t.Matches)
                     .ThenInclude(m => m.TeamA)
                 .Include(t => t.Matches)
                     .ThenInclude(m => m.TeamB)
                 .FirstOrDefaultAsync(t => t.Id == id, ct);
+                
         }
         public async Task<int> CreateTeamRawSqlAsync(string teamName, int tournamentId, int creatorPlayerId, CancellationToken ct)
         {
@@ -102,7 +106,9 @@ namespace Backend.Infrastructure.Persistence.Repositories
         }
         public async Task<bool> PlayerExistsAsync(int playerId, CancellationToken ct)
         {
-            return await _context.Players.AnyAsync(p => p.Id == playerId, ct);
+            return await _context.Players
+                .AsNoTracking()
+                .AnyAsync(p => p.Id == playerId, ct);
         }
     }
 }
