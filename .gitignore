@@ -1,9 +1,9 @@
-WebApplicationAM/.dockerignore
-WebApplicationAM/.vs/
-WebApplicationAM/WebApplicationAM/Dockerfile
-WebApplicationAM/WebApplicationAM/WebApplicationAM.csproj.user
-WebApplicationAM/WebApplicationAM/bin/
-WebApplicationAM/WebApplicationAM/obj/
-tournamentSite/.gitignore
-tournamentSite/package-lock.json
+src/obj/
+src/Backend/.vs/
+src/Backend/obj/
+src/Backend/Backend/bin/
+src/Backend/Backend/obj/
+src/Backend/Backend/BackendApi.csproj.user
+src/Backend/.dockerignore
+src/Backend/Backend/Dockerfile
 
