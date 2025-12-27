@@ -1,0 +1,9 @@
+src/obj/
+src/Backend/.vs/
+src/Backend/obj/
+src/Backend/Backend/bin/
+src/Backend/Backend/obj/
+src/Backend/Backend/BackendApi.csproj.user
+src/Backend/.dockerignore
+src/Backend/Backend/Dockerfile
+
