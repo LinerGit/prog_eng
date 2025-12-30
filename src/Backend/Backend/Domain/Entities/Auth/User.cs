@@ -1,11 +1,12 @@
-﻿namespace Backend.Domain.Entities.Auth
+﻿using Backend.Domain.Common;
+
+namespace Backend.Domain.Entities.Auth
 {
-    public class User
+    public class User : Entity  
     {
-        public int Id { get; set; }
-        public string Username { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
-        public string PasswordHash { get; set; }
+        public string Username { get; private set; } = string.Empty;
+        public string Email { get; private set; } = string.Empty;
+        public string PasswordHash { get; private set; }
         public Role Role { get; set; }
 
         public User(string email, string passwordHash, Role role, int id, string username)
