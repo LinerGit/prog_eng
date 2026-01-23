@@ -97,6 +97,7 @@ namespace Backend.Presentation.Services
         }
         public async Task<int> PlayerCreatesTeamAsync(string teamName, int tournamentId, int playerId, CancellationToken ct)
         {
+            // 1. Проверка на пустую строку
             if (string.IsNullOrWhiteSpace(teamName))
                 throw new ArgumentException("Название команды не может быть пустым");
 
