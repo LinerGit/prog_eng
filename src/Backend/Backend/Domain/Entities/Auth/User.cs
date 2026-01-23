@@ -8,6 +8,7 @@
         public string PasswordHash { get; set; }
         public Role Role { get; set; }
 
+        protected User() { }
         public User(string email, string passwordHash, Role role, int id, string username)
         {
             Id = id;

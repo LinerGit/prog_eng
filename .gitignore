@@ -6,4 +6,4 @@ src/Backend/Backend/obj/
 src/Backend/Backend/BackendApi.csproj.user
 src/Backend/.dockerignore
 src/Backend/Backend/Dockerfile
-
+src/FrontendTournaments/node_modules
